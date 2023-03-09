@@ -46,7 +46,7 @@ mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log('succesfully connected to database'))
   .catch((err) => console.log(err));
-
-app.listen(process.env.port, () => {
+const port = process.env.PORT || 5001;
+app.listen(port, () => {
   console.log('server started....!');
 });
