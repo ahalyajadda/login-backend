@@ -23,10 +23,9 @@ app.post('/register', async (req, res) => {
       password: bcrypt.hashSync(req.body.password),
     });
     const user = await newUser.save();
-    console.log(user);
+
     res.status(201).send({ message: 'user created successfully' });
   } catch (err) {
-    console.log(err);
     res.status(401).send(err);
   }
 });
